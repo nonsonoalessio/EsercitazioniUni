@@ -62,4 +62,25 @@ Una volta apportate delle modifiche, il sistema di caricamento del file segue qu
     A questo punto, il commit può essere ritirato, premendo sul bottone ``Undo`` in basso o, in alternativa, pushato (cioè caricato) all'``Origin``, cioè il repo presente su GitHub, in modo da consentire l'accesso al codice agli altri membri (ciò non avviene in tempo reale, come ad. es. su Google Docs, per una questione di Bug Security: in altre parole, serve per non far sminchiare il codice nel caso qualcuno commetta delle imprecisioni).
 
 3. pull di commit da ``Origin``.
-4. .
+
+    Quando viene eseguita da remoto un'operazione, bisogna innanzitutto fare il *fetch* di ``Origin``, mediante il bottone ``Fetch Origin`` con le freccette:
+
+    ![fetch](/assets/readme/fetch.png)
+
+    Questo consentirà la verifica di nuovi aggiornamenti:
+
+    ![prepull](/assets/readme/prePull.png)
+
+    Che si dovranno *pullare* col bottone ``Pull origin``. A questo punto, si è pronti per lavorare all'ultima versione della codebase.
+
+4. cambiamenti nel codice.
+
+    Quando vengono apportate delle modifiche, il client di GitHub va automaticamente ad eseguire un riepilogo delle modifiche, evidenziando in verde le aggiunte ed in rosso le modifiche:
+
+    ![modifiche](/assets/readme/updates.png)
+
+    In questo esempio si nota l'aggiunta di ulteriori righe, mentre vi è la cancellazione della riga 64, con l'aggiunta di nuovo testo.
+
+# 4: Materiale bonus
+* 🎤 [Server Discord]()
+* 📝 [Notion per FdP]()
