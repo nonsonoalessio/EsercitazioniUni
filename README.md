@@ -62,3 +62,4 @@ Una volta apportate delle modifiche, il sistema di caricamento del file segue qu
     A questo punto, il commit può essere ritirato, premendo sul bottone ``Undo`` in basso o, in alternativa, pushato (cioè caricato) all'``Origin``, cioè il repo presente su GitHub, in modo da consentire l'accesso al codice agli altri membri (ciò non avviene in tempo reale, come ad. es. su Google Docs, per una questione di Bug Security: in altre parole, serve per non far sminchiare il codice nel caso qualcuno commetta delle imprecisioni).
 
 3. pull di commit da ``Origin``.
+4. .
