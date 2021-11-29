@@ -82,5 +82,8 @@ Una volta apportate delle modifiche, il sistema di caricamento del file segue qu
     In questo esempio si nota l'aggiunta di ulteriori righe, mentre vi è la cancellazione della riga 64, con l'aggiunta di nuovo testo.
 
 # 4: Materiale bonus
-* 🎤 [Server Discord]()
-* 📝 [Notion per FdP]()
+* 🎤 [Server Discord](https://discord.gg/nmNnn9BM)
+
+> Valido per 7 giorni, a partire dal: 29/11/2021.
+
+* 📝 [Notion per FdP](https://nonsonoalessio.notion.site/Fondamenti-di-programmazione-868977c27eea4dd9bfc9169cbb28567e)
