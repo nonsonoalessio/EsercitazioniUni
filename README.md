@@ -17,3 +17,16 @@
  > Sarebbe preferibile adoperare la nomeclatura ``camelCased`` per tutti i file. Tale nomenclatura, prevede la prima iniziale minuscola, tutte le parole scritte attaccate, la cui iniziale è maiuscola (Come nell'esempio della cartella con gli errori).
 
  Per qualsiasi richiesta di correzione, basta caricare il file nel repo e richiedere aiuto, con opportuno commento nel ``commit`` (vedasi paragrafi seguenti). Caricando la correzione, buona norma sarebbe quella di commentare, all'interno del sorgente, oppure mediante apposita funzionalità di GitHub, le varie aggiunte/rimozioni/modifiche.
+
+ # 3: Come si usa GitHub?
+ Innanzitutto, bisogna accedere a [GitHub](https://www.github.com/) e creare un account, e scaricare il client Desktop a [questo link](https://desktop.github.com/).
+
+ A questo punto, dopo aver effettuato il login, bisognerà "clonare" (cioè lasciare che GitHub salvi in automatico i file del progetto sul proprio HDD) il repo.
+
+ Basterà aprire nel proprio editor (NetBeans, VS Code e qualsiasi altro IDE si ritiene opportuno) la cartella in cui viene clonato il repo per iniziare la magia (ed iniziare a lavorare).
+
+Una volta apportate delle modifiche, il sistema di caricamento del file segue questo schema:
+
+* si esegue il commit in cui si riassume in breve le modifiche apportate. Es.
+
+![commit]()
