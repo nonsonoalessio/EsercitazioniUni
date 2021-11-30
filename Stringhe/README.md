@@ -4,7 +4,7 @@
 
 Svolgimento:``30-11-2021``.
 
-## Dai commenti:
+### Dai commenti:
 * Con l'istruzione ``getchar()`` si raccolgono in input **tutti** i caratteri, ivi inclusi gli spazi; tale precisazione è necessaria dal momento in cui l'espressione ``scanf("%s", <nome della stringa>)`` cessa di prendere in input al raggiungimento del primo spazio;
 * In più, l'utilizzo dell'espressione ``ch = getchar()`` come termine di evalutazione (``while(ch = getchar())``) vada posta tra parentesi, in quanto membro unico dell'evalutazione:
     * evalutare con la forma ``while(ch = getchar() != '<carattere>')`` comporta la mancata evalutazione dell'espressione;
