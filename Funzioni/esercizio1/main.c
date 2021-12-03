@@ -7,7 +7,7 @@ n! / (k!(n-k)!)
 #include <stdio.h>
 #include <stdlib.h>
 
-double binomiale(int, int);
+double calcoloBinomiale(int, int);
 int fattoriale(int);
 
 int main() {
@@ -19,16 +19,16 @@ int main() {
     scanf("%d", &n);
 
     printf("scegli il valore di k: \n");
-    scanf("%d" ,&k);
+    scanf("%d", &k);
 
-    binomiale = binomiale(n, k);
+    binomiale = calcoloBinomiale(n, k);
 
     printf("il risultato del binomiale è: %f \n" ,binomiale);
     system("PAUSE");
     return 0;
 }
 
-double binomiale(n, k){
+double calcoloBinomiale(int n, int k){
     double binomiale;
     int a, b, c;
     a = fattoriale(n);
@@ -39,7 +39,7 @@ double binomiale(n, k){
     return binomiale;
 }
 
-int fattoriale(x){
+int fattoriale(int x){
     int fattoriale = 1;
     for(int i = 1; i <= x; i++){
         fattoriale = fattoriale * x;
