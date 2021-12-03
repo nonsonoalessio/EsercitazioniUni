@@ -5,7 +5,7 @@ Dall'esercizio 1, si può notare una cosa abbastanza importante per comprendere 
 > In C89 il tipo dati di ritorno di default, se non diversamente specificato, viene visto come ``int``.
 In C99, invece, tale assunzione viene soppressa.
 
-Questo porta il compilatore a puntare un certo warning, per le chiamate alla funzione come segue:
+Questo porta il compilatore a puntare un certo warning, per le dichiarazioni delle funzioni come segue:
 
     main.c:31:8: warning: type of ‘n’ defaults to ‘int’ [-Wimplicit-int]
     
