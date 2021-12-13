@@ -18,24 +18,24 @@ n=6
 
 
 int main(){
-    int N, i = 1, numeroInStampa = 1, numeroPerRigaPrecedente = 1, valoriStampati = 0;
+    int N, i = 1, numeroInStampa = 1, numeroPerRiga = 1, valoriStampati = 0;
     printf("Inserisci il numero di righe del triangolo di Floyd: ");
     scanf("%d", &N);
 
     while (i <= N)
     {
-        while (valoriStampati < numeroPerRigaPrecedente)
+        while (valoriStampati < numeroPerRiga)
         {
             printf("%-4d", numeroInStampa);
             valoriStampati++;
             numeroInStampa++;
         }
-        numeroPerRigaPrecedente++;
+        numeroPerRiga++;
         valoriStampati = 0;
         i++;
         printf("\n");
     }
     
-    system("PAUSE");
+    // system("PAUSE");
     return 0;
 }
