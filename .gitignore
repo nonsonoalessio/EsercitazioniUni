@@ -54,3 +54,6 @@ dkms.conf
 # Altro
 .vscode
 .gennaro
+*.dat
+*.txt
+
