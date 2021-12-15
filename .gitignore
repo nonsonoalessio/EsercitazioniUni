@@ -51,9 +51,13 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Altro
+# Altro - cartelle
 .vscode
 .gennaro
+.assets
+
+# Altro - estensioni
 *.txt
 
+# Altro - vario
 a
