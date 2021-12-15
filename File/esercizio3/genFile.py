@@ -1,4 +1,3 @@
-from os import close
 from random import randint as seed, random
 
 path = 'input.txt'
@@ -8,4 +7,4 @@ for i in range(10):
     f.write(str(seed(-567890876, 65678908)))
     f.write('\n')
 
-f = f.close()
+f.close()
