@@ -37,4 +37,4 @@ for i in range(ripetizioniSullaColonna):
     f.write("stop")
     f.write('\n')
 
-f = f.close()
+f.close()

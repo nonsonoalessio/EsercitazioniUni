@@ -1,68 +1,49 @@
 /*
-Dato un file contenente una sequenza ignota di numeri interi positivi (scritti in lettere cifra per cifra e terminati dalla parola stop)
-Scrivere un programmma in C che legge da tastiera il nome del file e stampa la somma dei numeri letti.
+Scrivere una funzione che restituisce il numero degli alberghi che hanno il servizio richiesto e il numero di stelle pari o superiore
+
+Posta (****), 2 garage giardino
 */
 
-#include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-#include <ctype.h>
+#include <stdio.h>
 #include <string.h>
 
-#define SIZE 1000
-
-int trascrizione(char *);
-int compose(int *, int);
+#define SIZE 30
 
 int main(){
-    int i, num[SIZE], count = 0, somma = 0;
-    char path[] = "dati.txt", numLit[SIZE], ch;
+    int n; // numero di stelle
+    char s[SIZE]; // servizio
+    int numServizi, i, count = 0, stelleNum;
+    char stelleRead[SIZE+1], nomeHotel[SIZE+1], sRead[SIZE+1]; 
+    char path[]="list.dat", ch;
     FILE *fp;
 
-    printf("Genero il file...\n");
-    system("python3 genFile.py");
-    // apro il file
+    printf("Immetti numero stelle e nome servizio: ");
+    scanf("%d %s", &n, s);
     fp = fopen(path, "r");
-    if(fp == NULL) exit(1);
-
-    // leggo il file e trascrivo
-    while((ch = getc(fp)) != EOF){
-        while (strcmp(numLit, "stop") != 0){
-            fscanf(fp, "%s", numLit);
-            num[i] = trascrizione(numLit);
-            i++;
-            count++;
+    if (fp == NULL) exit(1);
+    
+    while ((ch = fgetc(fp)) != EOF)
+    {
+        fscanf(fp, "%s", nomeHotel);        
+        fscanf(fp, "%s", stelleRead);
+        stelleNum = strlen(stelleRead) - 3;
+        if (stelleNum > n) {
+            fscanf(fp, "%d", &numServizi);
+            for (i = 0; i < numServizi; i++)
+            {
+                fscanf(fp, "%s", sRead);
+                if (strcmp(s, sRead) == 0)
+                {
+                    count++;
+                }
+                
+            }
+            
         }
-        somma = compose(num, count) + somma;
-        i = 0;
-        int num[] = {0};
     }
     
-    printf("La somma dei numeri nel file è: %d. \n");
     fclose(fp);
+    printf("Il numero di alberghi con le caratteristiche richieste è %d.\n", count);
     return 0;
-}
-
-int trascrizione(char* numLit){
-    if(strcmp(numLit, "zero") == 0) return 0;
-    if(strcmp(numLit, "uno") == 0) return 1;
-    if(strcmp(numLit, "due") == 0) return 2;
-    if(strcmp(numLit, "tre") == 0) return 3;
-    if(strcmp(numLit, "quattro") == 0) return 4;
-    if(strcmp(numLit, "cinque") == 0) return 5;
-    if(strcmp(numLit, "sei") == 0) return 6;
-    if(strcmp(numLit, "sette") == 0) return 7;
-    if(strcmp(numLit, "otto") == 0) return 8;
-    if(strcmp(numLit, "nove") == 0) return 9;
-}
-
-int compose(int * num, int dim){
-    int i, index = 0, numero = 0;
-    for (i = dim; i > 0; i--)
-    {
-        numero = numero + (pow(10, index) * num[i]);
-        index++;
-    }
-    numero = (int)numero;
-    return numero;
 }
