@@ -148,8 +148,15 @@ void stampaVettore(int a[], int n) {
  Restituisce tramite parametri di uscita l'array newvet contenente i soli elementi di vet maggiori di T e la sua dimensione newn.
  */
 void creaSoglia(int vet[], int n, int T, int newvet[], int *newn) {
-    
-    /* FUNZIONE DA COMPLETARE */
+    int i, j = 0;
+    *newn = 0;
+    for(i = 0; i < n; i++){
+        if(vet[i] > T){
+            newvet[j] = vet[i];
+            j++;
+            *newn = *newn + 1;
+        }
+    }    
 }
 
 /* La funzione MaggPari  riceve come parametro l'array vet e la sua dimensione n.
@@ -157,15 +164,23 @@ void creaSoglia(int vet[], int n, int T, int newvet[], int *newn) {
  restituisce il valore 0 altrimenti.
  */
 int MaggPari(int vet[], int n) {
-
-    /* FUNZIONE DA COMPLETARE */
+    int i, contaPari = 0, contaDispari = 0;
+    for (i = 0; i < n; i++){
+        if(vet[i] % 2 == 0) contaPari++;
+        else contaDispari++;
+    }
+    if (contaPari >= contaDispari) return 1;
+    else return 0; 
 }
 
 /* La funzione scriviVettore riceve come parametri il puntatore a file di output, l'array vet e la sua dimensione n.
    Scrive gli elementi del vettore sul file di output.
  */
 void scriviVettore(FILE *fp, int vet[], int n) {
-
-    /* FUNZIONE DA COMPLETARE */
+    int i;
+    for(i = 0; i < n; i++){
+        fprintf(fp, "%d ", vet[i]);
+    }
+    fprintf(fp, "\nLa dimensione dell'array è: %d.", n);
 }
 

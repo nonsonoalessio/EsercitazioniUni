@@ -181,7 +181,15 @@ void StampaVettore(int a[], int n) {
  * gli elementi della matrice. La funzione restituisce la dimensione della matrice
  */
 int LeggiMatrice(FILE *fpin, int mat[][DIM]) {
-    /* Funzione da completare */
+    int grandezza, i, j;
+    *fpin = apriFile('r');
+    fscanf(fpin, "%d", &grandezza);
+    for(i = 0; i < grandezza; i++){
+        for(j = 0; j < grandezza; j++){
+            fscanf(fpin, "%d", &mat[i][j]);
+        }
+    }
+    return grandezza;
 }
 
 /*
@@ -189,7 +197,13 @@ int LeggiMatrice(FILE *fpin, int mat[][DIM]) {
  * dimensione. Stampa a video i valori della matrice.
  */
 void StampaMatrice(int m[][DIM], int n) {
-    /* Funzione da completare */
+    int i, j;
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n; j++){
+            printf("%d ", mat[i][f]);
+        }
+        printf("\n");
+    }
 }
 
 /* 
