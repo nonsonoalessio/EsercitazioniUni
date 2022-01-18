@@ -165,7 +165,6 @@ FILE *apriFile(char mode[]) {
 
 /* La funzione StampaVettore riceve come parametro un array a e la sua dimensione n
  * e lo stampa a video */
-
 void StampaVettore(int a[], int n) {
     int i;
     for (i = 0; i < n; i++) {
@@ -182,7 +181,6 @@ void StampaVettore(int a[], int n) {
  */
 int LeggiMatrice(FILE *fpin, int mat[][DIM]) {
     int grandezza, i, j;
-    *fpin = apriFile('r');
     fscanf(fpin, "%d", &grandezza);
     for(i = 0; i < grandezza; i++){
         for(j = 0; j < grandezza; j++){
@@ -200,7 +198,7 @@ void StampaMatrice(int m[][DIM], int n) {
     int i, j;
     for(i = 0; i < n; i++){
         for(j = 0; j < n; j++){
-            printf("%d ", mat[i][f]);
+            printf("%d ", m[i][j]);
         }
         printf("\n");
     }
@@ -212,7 +210,14 @@ void StampaMatrice(int m[][DIM], int n) {
  * nell'elemento i-mo del vettore v, passato come ulteriore parametro.
  */
 void RiempiVettoreSomme(int a[][DIM], int n, int v[]) {
-    /* Funzione da completare */
+    int somma = 0, i, j;
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n; j++){
+            somma = somma + a[i][j];
+        }
+        v[i] = somma;
+        somma = 0;
+    }
 }
 
 /* 
@@ -221,7 +226,19 @@ void RiempiVettoreSomme(int a[][DIM], int n, int v[]) {
  * restituiti tramite i parametri imin e imax, rispettivamente.
  */
 void CercaMinMax(int v[], int n, int *imin, int *imax) {
-    /* Funzione da completare */
+    int i, massimo, minimo;
+    massimo = v[0];
+    minimo = v[0];
+    for(i = 0; i < n; i++){
+        if(v[i] < minimo) {
+            *imin = i;
+            minimo = v[i];
+        }
+        if(v[i] > massimo) {
+            *imax = i;
+            massimo = v[i];
+        }
+    }
 }
 
 /* 
@@ -231,7 +248,12 @@ void CercaMinMax(int v[], int n, int *imin, int *imax) {
  * indice k della matrice.
  */
 void ScambiaRighe(int m[][DIM], int n, int h, int k) {
-    /* Funzione da completare */
+    int i, appoggio;
+    for(i = 0; i < n; i++){
+        appoggio = m[h][i];
+        m[h][i] = m[k][i];
+        m[k][i] = appoggio;
+    }
 }
 
 /* 
@@ -240,7 +262,14 @@ void ScambiaRighe(int m[][DIM], int n, int h, int k) {
  * dimensione della matrice quadrata. Successivamente scrive su file gli elementi della matrice.
  */
 void ScriviMatrice(FILE *fpin, int mat[][DIM], int n) {
-    /* Funzione da completare */
+    int i, j;
+    fprintf(fpin, "%d\n", n);
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n; j++){
+            fprintf(fpin, "%2d", mat[i][j]);
+        }
+        fprintf(fpin, "\n");
+    }
 }
 
 
