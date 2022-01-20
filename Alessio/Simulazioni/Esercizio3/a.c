@@ -2,11 +2,7 @@
 #include <stdlib.h>
 
 int main(){
-    char a, b;
-    printf("Inserisci a: ");
-    scanf("%c", &a);
-    printf("Inserisci b: ");
-    scanf("%c", &b);
-    printf("%d, %d.\n", a, b);
+    char a = '\0', z = 'E', A = 'I', Z = 'O', ab = 'U';
+    printf("%d\n", a);
     return 0;
 }

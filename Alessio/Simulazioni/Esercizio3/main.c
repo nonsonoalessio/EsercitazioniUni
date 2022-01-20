@@ -65,16 +65,17 @@ int main(int argc, char** argv) {
  e ritorna il puntatore al file
  */
 FILE *ApriFile(char mode[]) {
+    FILE *fpin;
     char PATH[NCAR + 1];
     printf("Inserisci nome file: ");
     scanf("%s", PATH);
-    fopen(PATH, mode);
-    if (ApriFile == NULL)
+    fpin = fopen(PATH, mode);
+    if (fpin == NULL)
     {
         printf("Errore nell'apertura del file. Chiudo il programma.\n");
-        EXIT(EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     }
-    return *ApriFile;
+    return fpin;
 }
 
 /*
@@ -82,26 +83,23 @@ FILE *ApriFile(char mode[]) {
  * il numero di caratteri consonanti, vocali, minuscoli e maiuscoli  che appaiono nel file.
  */
 void Statistics(char stringa[], int *c, int *v, int *m, int *M) {
-    char ch;
+    int i = 0;
     *c = 0;
     *v = 0;
     *m = 0;
     *M = 0;
-    while((ch = getchar()) != '\0'){
-        if(ch == "I" || ch == "A" || ch == "E" || ch == "O" || ch == "U"){
-            *v = *v + 1;
+    while(stringa[i] != '\0'){
+        if(stringa[i] >= 65 && stringa[i] <= 90) {
             *M = *M + 1;
+            if(stringa[i] == 65 || stringa[i] == 69 || stringa[i] == 73 || stringa[i] == 79 || stringa[i]== 85) *v = *v + 1;
+            else *c = *c + 1;
         }
-        else if (ch == "i" || ch == "a" || ch == "e" || ch == "o" || ch == "u")
-        {
-            *v = *v + 1;
+        else if(stringa[i] >= 97 && stringa[i] <= 122) {
             *m = *m + 1;
+            if(stringa[i] == 97 || stringa[i] == 101 || stringa[i] == 105 || stringa[i]== 111 || stringa[i]==117) *v = *v + 1;
+            else *c = *c + 1;
         }
-        else{
-            *c = *c + 1;
-            if(ch >= 65 && ch <= 90) *M = *M + 1;
-            else *m = *m + 1;            
-        }
+        i++;
     }
 }
 

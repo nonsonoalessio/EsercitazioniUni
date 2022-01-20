@@ -72,7 +72,15 @@ int main(int argc, char** argv) {
  e ritorna il puntatore al file
  */
 FILE *ApriFile(char* mode) {
-    /* FUNZIONE DA COMPLETARE*/
+    FILE *fp;
+    char PATH[NCAR + 1];
+    printf("Immetti nome file: ");
+    scanf("%s", PATH);
+    if((fp = fopen(PATH, mode)) == NULL){
+        printf("Errore nell'apertura del file. Termino il programma.\n");
+        exit(EXIT_FAILURE);
+    }
+    return fp;
 }
 
 /*
@@ -80,7 +88,17 @@ FILE *ApriFile(char* mode) {
  * il numero di occorrenze di doppie contenute nella stringa.
  */
 int Doppie(char str[]) {
-    /* FUNZIONE DA COMPLETARE*/
+    int i = 1, result = 0;
+
+    while(str[i] != '\0'){
+        if (str [i] == str[i - 1]) result++;
+        else{
+            if (str[i] == str[i - 1] + 32) result++; // la precedente è maiuscola
+            else if (str[i] == str[i - 1] - 32) result++;
+        }
+        i++; 
+    }
+    return result;
 }
 
 
@@ -91,5 +109,5 @@ int Doppie(char str[]) {
  * 
  */
 void ScriviRisultato(FILE *fpout, char string[], int n_doppie) {
-    /* FUNZIONE DA COMPLETARE*/
+    fprintf(fpout, "* %s: %d\n", string, n_doppie);
 }
