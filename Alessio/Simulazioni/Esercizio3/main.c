@@ -65,7 +65,16 @@ int main(int argc, char** argv) {
  e ritorna il puntatore al file
  */
 FILE *ApriFile(char mode[]) {
-    /* FUNZIONE DA COMPLETARE*/
+    char PATH[NCAR + 1];
+    printf("Inserisci nome file: ");
+    scanf("%s", PATH);
+    fopen(PATH, mode);
+    if (ApriFile == NULL)
+    {
+        printf("Errore nell'apertura del file. Chiudo il programma.\n");
+        EXIT(EXIT_FAILURE);
+    }
+    return *ApriFile;
 }
 
 /*
@@ -73,7 +82,27 @@ FILE *ApriFile(char mode[]) {
  * il numero di caratteri consonanti, vocali, minuscoli e maiuscoli  che appaiono nel file.
  */
 void Statistics(char stringa[], int *c, int *v, int *m, int *M) {
-    /* FUNZIONE DA COMPLETARE*/
+    char ch;
+    *c = 0;
+    *v = 0;
+    *m = 0;
+    *M = 0;
+    while((ch = getchar()) != '\0'){
+        if(ch == "I" || ch == "A" || ch == "E" || ch == "O" || ch == "U"){
+            *v = *v + 1;
+            *M = *M + 1;
+        }
+        else if (ch == "i" || ch == "a" || ch == "e" || ch == "o" || ch == "u")
+        {
+            *v = *v + 1;
+            *m = *m + 1;
+        }
+        else{
+            *c = *c + 1;
+            if(ch >= 65 && ch <= 90) *M = *M + 1;
+            else *m = *m + 1;            
+        }
+    }
 }
 
 /*
@@ -83,5 +112,9 @@ void Statistics(char stringa[], int *c, int *v, int *m, int *M) {
  * e infine il numero totale di stringhe trovate nel file.
  */
 void ScriviRisultato(FILE *fpout, int c, int v, int m, int M, int n_stringhe) {
-    /* FUNZIONE DA COMPLETARE*/
+    fprintf(fpout, "Occorrenze delle vocali: %d;\n", v);
+    fprintf(fpout, "Occorrenze delle consanti: %d;\n", c);
+    fprintf(fpout, "Occorrenze delle maiuscole: %d;\n", M);
+    fprintf(fpout, "Occorrenze delle minuscole: %d;\n", m);
+    fprintf(fpout, "Stringhe lette: %d.", n_stringhe);
 }
