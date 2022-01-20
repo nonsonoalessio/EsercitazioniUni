@@ -71,7 +71,7 @@ Inserire nome file: matout.txt
 
 Matrice salvata
 
- */
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -232,7 +232,7 @@ void CercaMinMax(int v[], int n, int *imin, int *imax) {
     for(i = 0; i < n; i++){
         if(v[i] < minimo) {
             *imin = i;
-            minimo = v[i];
+            minimo=v[i];
         }
         if(v[i] > massimo) {
             *imax = i;
